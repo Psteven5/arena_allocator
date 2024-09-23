@@ -151,7 +151,7 @@ struct arena_allocator {
 #else
 
 #pragma message "arena_allocator expects C++11 or higher"
-#error 201100 > __cplusplus
+#error  201100 > __cplusplus
 
 #endif // 201100 <= __cplusplus
 
