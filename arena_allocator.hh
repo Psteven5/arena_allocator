@@ -65,7 +65,8 @@ struct arena_allocator {
 
     // deallocates if it is the most recent allocation, otherwise does nothing
     constexpr
-    void deallocate(_Tp *ptr, std::size_t n) noexcept {
+    void deallocate(_Tp *ptr, std::size_t n) noexcept
+    {
         if (ptr == m->curr - n)
             m->curr = ptr;
     }
