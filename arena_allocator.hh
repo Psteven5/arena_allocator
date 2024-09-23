@@ -34,8 +34,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <memory>
 
-#if 201100 <= __cplusplus
+#if 202000 > __cplusplus
+    #include <cstdlib>
+#endif
 
+#if 201100 <= __cplusplus
 template<typename _Tp>
 struct arena_allocator {
     // size of an allocation page of the underlying memory
@@ -146,12 +149,9 @@ struct arena_allocator {
 
     const std::shared_ptr<struct_arena_allocator__struct_m> m;
 };
-
 #else
-
-#pragma message "arena_allocator expects C++11 or higher"
-#error  201100 > __cplusplus
-
+    #pragma message "arena_allocator expects C++11 or higher"
+    #error  201100 > __cplusplus
 #endif // 201100 <= __cplusplus
 
 #endif // ARENA_ALLOCATOR_INCLUDED
