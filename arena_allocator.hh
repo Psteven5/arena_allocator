@@ -32,7 +32,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef ARENA_ALLOCATOR_INCLUDED
 #define ARENA_ALLOCATOR_INCLUDED
 
-#include <iostream>
 #include <memory>
 
 #if 201100 <= __cplusplus
